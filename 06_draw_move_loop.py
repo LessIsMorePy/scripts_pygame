@@ -1,4 +1,5 @@
 import pygame
+import math
 
 pygame.init()
 
@@ -11,13 +12,28 @@ clock = pygame.time.Clock()
 # Initial loop state
 done = False
 
+# Color
+color = (200, 0, 200)
+
 while not done:
+
+    screen.fill((0, 0, 0))
 
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
             done = True
-    
+
+    for i in range(200):
+
+        radians_x = i / 20
+        radians_y = i / 6
+
+        x = int(75 * math.sin(radians_x)) + 150
+        y = int(75 * math.cos(radians_y)) + 150
+
+        pygame.draw.line(screen, color, [x, y], [x + 5, y], 3)
+
     # Update the screen with what we have draw
     pygame.display.flip()
 
@@ -25,8 +41,4 @@ while not done:
     clock.tick(60)
 
 # Close the window and quit
-"""
-If you forget this line, the program will 'hang'
-on exit if running from IDLE
-"""
 pygame.quit()
