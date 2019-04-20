@@ -12,9 +12,6 @@ clock = pygame.time.Clock()
 # Initial loop state
 done = False
 
-# Color
-color = (200, 0, 200)
-
 # Settings text
 font = pygame.font.SysFont('Calibri', 40, True, False)
 
