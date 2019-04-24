@@ -6,7 +6,7 @@ pygame.init()
 high = 300
 weight = 300
 
-screen = pygame.display.set_mode((high, weight))
+screen = pygame.display.set_mode((weight, high))
 pygame.display.set_caption('I am the window')
 
 # Used to mange how fast the screen updates
